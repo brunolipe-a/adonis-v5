@@ -18,6 +18,11 @@
 |
 */
 
+import HealthCheck from '@ioc:Adonis/Core/HealthCheck'
 import Route from '@ioc:Adonis/Core/Route'
+
+Route.get('/healthz', async () => {
+  return HealthCheck.getReport()
+})
 
 Route.on('/').render('welcome')
