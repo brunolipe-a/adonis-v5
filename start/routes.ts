@@ -26,3 +26,4 @@ Route.get('/healthz', async () => {
 })
 
 Route.on('/').render('welcome')
+Route.on('/app').render('app')
