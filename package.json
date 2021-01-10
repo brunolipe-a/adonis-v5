@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node ace build --production",
+    "build": "node ace mix:build && node ace build --production",
     "start": "node server.js",
+    "start:build": "cd build && yarn install --production && yarn start",
     "dev": "node ace serve --watch",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write ."
