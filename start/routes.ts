@@ -20,20 +20,23 @@
 
 import HealthCheck from '@ioc:Adonis/Core/HealthCheck'
 import Route from '@ioc:Adonis/Core/Route'
+import User from 'App/Models/User'
 
 Route.get('/healthz', async () => {
   return HealthCheck.getReport()
 })
 
-Route.get('/', ({ inertia }) => {
-  const data = {
-    name: 'Bruno',
-    age: 19,
-  }
+Route.group(() => {
+  Route.get('/', async ({ inertia, auth }) => {
+    const { email } = auth.user as User
 
-  return inertia.render('home', { ...data })
-})
+    const username = email.split('@')[0]
 
-Route.get('/about', ({ inertia }) => {
-  return inertia.render('about')
+    return inertia.render('home', { email: username })
+  }).as('home')
 })
+  .middleware('auth')
+  .prefix('app')
+
+Route.resource('login', 'LoginController').only(['index', 'store'])
+Route.resource('register', 'RegisterController').only(['index', 'store'])

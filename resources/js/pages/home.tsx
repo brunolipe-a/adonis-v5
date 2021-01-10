@@ -4,17 +4,16 @@ import { Flex, Heading, ListItem, Text, UnorderedList, chakra, Code } from '@cha
 import PageTransition from '../components/PageTransition'
 
 interface HomeProps {
-  name: string
-  age: number
+  email: string
 }
 
-function Home({ name, age }: HomeProps) {
+function Home({ email }: HomeProps) {
   return (
     <PageTransition>
       <Flex as="main" maxW={768} m="auto" h="100vh" py={0} px={10} align="center" justify="center">
         <div>
           <Heading as="h1" size="2xl" mb={2}>
-            It Works, {name} {age}!
+            It Works, {email}!
           </Heading>
           <Text fontSize="2xl" mb={10}>
             Congratulations, you have just created your first AdonisJS app.

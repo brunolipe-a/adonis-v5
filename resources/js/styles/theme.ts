@@ -1,18 +1,12 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme, Theme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
 
-const customTheme = extendTheme({
+const customTheme: Theme = extendTheme({
   components: {
     Heading: {
       baseStyle: {
         fontFamily: 'Poppins, sans-serif',
       },
-    },
-  },
-  colors: {
-    brand: {
-      400: '#7b7bff',
-      500: '#6c6cff',
     },
   },
   styles: {
@@ -21,35 +15,10 @@ const customTheme = extendTheme({
         color: mode('gray.700', 'whiteAlpha.900')(props),
         fontFamily: 'Poppins, sans-serif',
       },
-      a: {
-        color: mode('brand.500', 'brand.400')(props),
-      },
     }),
   },
   shadows: {
-    base: '0px 1px 3px 0px rgba(54,74,99,0.05)',
-  },
-  textStyles: {
-    'heading': {
-      textAlign: 'center',
-      fontWeight: 'bold',
-      letterSpacing: '-0.015em',
-      lineHeight: '1.24',
-      fontSize: { base: '2rem', md: '3.5rem' },
-    },
-    'heading-2': {
-      textAlign: 'center',
-      fontWeight: 'bold',
-      letterSpacing: '-0.015em',
-      lineHeight: '1.24',
-      fontSize: { base: '1.75rem', md: '2.75rem' },
-    },
-    'caps': {
-      textTransform: 'uppercase',
-      fontSize: 'sm',
-      letterSpacing: 'widest',
-      fontWeight: 'bold',
-    },
+    base: '0 2px 20px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06)',
   },
 })
 

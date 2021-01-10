@@ -9,7 +9,7 @@ const app = document.getElementById('app')
 
 InertiaProgress.init({
   delay: 0,
-  color: '#5a45ff',
+  color: theme.colors.teal[500],
 })
 
 render(
