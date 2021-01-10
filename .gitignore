@@ -5,6 +5,3 @@ coverage
 .DS_STORE
 .env
 tmp
-
-public/*
-!public/favicon.ico

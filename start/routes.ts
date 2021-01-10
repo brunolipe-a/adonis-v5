@@ -18,13 +18,8 @@
 |
 */
 
-import HealthCheck from '@ioc:Adonis/Core/HealthCheck'
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/healthz', async () => {
-  return HealthCheck.getReport()
-})
-
-Route.get('/', ({ inertia }) => {
-  return inertia.render('home', { name: 'Bruno' })
+Route.get('/', async () => {
+  return { hello: 'world' }
 })
