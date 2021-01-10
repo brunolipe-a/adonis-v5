@@ -3,15 +3,24 @@
   "include": ["**/*"],
   "exclude": ["node_modules", "build"],
   "compilerOptions": {
+    "lib": ["DOM"],
+    "jsx": "react",
     "outDir": "build",
     "rootDir": "./",
     "sourceMap": true,
+    "skipLibCheck": true,
     "paths": {
       "App/*": ["./app/*"],
       "Config/*": ["./config/*"],
       "Contracts/*": ["./contracts/*"],
       "Database/*": ["./database/*"]
     },
-    "types": ["@adonisjs/core", "@adonisjs/repl", "@adonisjs/session", "@adonisjs/view"]
+    "types": [
+      "@adonisjs/core",
+      "@adonisjs/repl",
+      "@adonisjs/session",
+      "@adonisjs/view",
+      "@eidellev/inertia-adonisjs"
+    ]
   }
 }

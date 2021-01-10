@@ -25,5 +25,6 @@ Route.get('/healthz', async () => {
   return HealthCheck.getReport()
 })
 
-Route.on('/').render('welcome')
-Route.on('/app').render('app')
+Route.get('/', ({ inertia }) => {
+  return inertia.render('home')
+})
