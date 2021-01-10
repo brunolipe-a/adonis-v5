@@ -38,5 +38,7 @@ Route.group(() => {
   .middleware('auth')
   .prefix('app')
 
+Route.on('/').render('welcome')
+
 Route.resource('login', 'LoginController').only(['index', 'store'])
 Route.resource('register', 'RegisterController').only(['index', 'store'])
