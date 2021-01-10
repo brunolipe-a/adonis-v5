@@ -1,17 +1,32 @@
 import { InertiaLink } from '@inertiajs/inertia-react'
+import { Box, Grid, VStack, Text, Code, Link } from '@chakra-ui/react'
 import React from 'react'
+import { ColorModeSwitcher } from '../components/ColorModeSwitcher'
+import { Logo } from '../components/Logo'
 
 function About() {
   return (
-    <main className="max-w-screen-md m-auto h-screen py-0 px-10 items-center flex justify-center">
-      <div>
-        <h1 className="text-3xl md:text-5xl mb-2 text-gray-800 leading-none font-bold">About!</h1>
-        <p className="text-2xl mb-10">
-          Congratulations, you have just created your first AdonisJS app.
-          <InertiaLink href="/">Discord</InertiaLink>
-        </p>
-      </div>
-    </main>
+    <Box textAlign="center" fontSize="xl">
+      <Grid minH="100vh" p={3}>
+        <ColorModeSwitcher justifySelf="flex-end" />
+        <VStack spacing={8}>
+          <Logo h="40vmin" pointerEvents="none" />
+          <Text>
+            Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
+          </Text>
+          <Link
+            as={InertiaLink}
+            color="teal.500"
+            href="/"
+            fontSize="2xl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Home
+          </Link>
+        </VStack>
+      </Grid>
+    </Box>
   )
 }
 

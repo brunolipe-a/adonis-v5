@@ -1,5 +1,6 @@
 import { InertiaLink } from '@inertiajs/inertia-react'
 import React from 'react'
+import { Flex, Heading, ListItem, Text, UnorderedList, chakra, Code } from '@chakra-ui/react'
 
 interface HomeProps {
   name: string
@@ -8,42 +9,48 @@ interface HomeProps {
 
 function Home({ name, age }: HomeProps) {
   return (
-    <main className="max-w-screen-md m-auto h-screen py-0 px-10 items-center flex justify-center">
+    <Flex as="main" maxW={768} m="auto" h="100vh" py={0} px={10} align="center" justify="center">
       <div>
-        <h1 className="text-3xl md:text-5xl mb-2 text-gray-800 leading-none font-bold">
+        <Heading as="h1" size="2xl" mb={2} color="gray.700">
           It Works, {name} {age}!
-        </h1>
-        <p className="text-2xl mb-10">
+        </Heading>
+        <Text fontSize="2xl" mb={10}>
           Congratulations, you have just created your first AdonisJS app.
-        </p>
+        </Text>
 
-        <ul>
-          <li className="mb-1 relative">
-            <span className="absolute left-0">—</span>
-            <span className="pl-6">
+        <UnorderedList spacing={1} listStyleType="none">
+          <ListItem pos="relative">
+            <chakra.span pos="absolute" left={0}>
+              —
+            </chakra.span>
+            <chakra.span pl={6}>
               The route for this page is defined inside{' '}
-              <code className="text-md bg-purple-100">start/routes.ts</code> file
-            </span>
-          </li>
-          <li className="mb-1 relative">
-            <span className="absolute left-0">—</span>
-            <span className="pl-6">
+              <Code colorScheme="teal">start/routes.ts</Code> file
+            </chakra.span>
+          </ListItem>
+          <ListItem pos="relative">
+            <chakra.span pos="absolute" left={0}>
+              —
+            </chakra.span>
+            <chakra.span pl={6}>
               You can update this page by editing{' '}
-              <code className="text-md bg-purple-100">resources/views/welcome.edge</code> file
-            </span>
-          </li>
+              <Code colorScheme="teal">resources/views/welcome.edge</Code> file
+            </chakra.span>
+          </ListItem>
 
-          <li className="mb-1 relative">
-            <span className="absolute left-0">—</span>
-            <span className="pl-6">
+          <ListItem pos="relative">
+            <chakra.span pos="absolute" left={0}>
+              —
+            </chakra.span>
+            <chakra.span pl={6}>
               If you run into problems, you can reach us on{' '}
               <InertiaLink href="/about">Discord</InertiaLink> or the{' '}
               <a href="https://forum.adonisjs.com/">Forum</a>.
-            </span>
-          </li>
-        </ul>
+            </chakra.span>
+          </ListItem>
+        </UnorderedList>
       </div>
-    </main>
+    </Flex>
   )
 }
 

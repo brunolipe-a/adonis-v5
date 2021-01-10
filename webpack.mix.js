@@ -13,7 +13,7 @@ mix
     output: { chunkFilename: 'js/[name].js?id=[chunkhash]' },
     resolve: {
       alias: {
-        '@': path.resolve('resources/js'),
+        '~': path.resolve('resources/js'),
       },
     },
   })
