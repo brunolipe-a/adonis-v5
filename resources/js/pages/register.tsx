@@ -1,4 +1,4 @@
-import { InertiaLink, usePage } from '@inertiajs/inertia-react'
+import { InertiaLink } from '@inertiajs/inertia-react'
 import {
   Box,
   Flex,
