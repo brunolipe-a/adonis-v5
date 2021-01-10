@@ -26,5 +26,5 @@ Route.get('/healthz', async () => {
 })
 
 Route.get('/', ({ inertia }) => {
-  return inertia.render('home')
+  return inertia.render('home', { name: 'Bruno' })
 })

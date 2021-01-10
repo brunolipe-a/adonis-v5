@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 
-interface List {
-  text: string
-  code?: string
-  links?: string[]
+interface HomeProps {
+  name: string
 }
 
-const Home = () => {
-  const [list] = useState<List[]>([
+const Home = ({ name }: HomeProps) => {
+  const [list] = useState([
     {
       text: 'The route for this page is defined inside',
       code: 'start/routes.ts',
@@ -26,7 +24,7 @@ const Home = () => {
       className="m-auto h-screen py-0 px-8 items-center flex justify-center"
     >
       <div>
-        <h1 className="text-5xl mb-2 text-gray-800 leading-none font-bold"> It Works! </h1>
+        <h1 className="text-5xl mb-2 text-gray-800 leading-none font-bold"> It Works, {name}! </h1>
         <p className="text-2xl mb-10">
           Congratulations, you have just created your first AdonisJS app.
         </p>
