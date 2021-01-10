@@ -14,7 +14,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body:before {
+/* body:before {
   content: '';
   background: #5a45ff;
   top: 0;
@@ -22,4 +22,4 @@ body:before {
   right: 0;
   height: 6px;
   position: absolute;
-}
+} */

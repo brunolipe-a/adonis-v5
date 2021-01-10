@@ -38,6 +38,7 @@
     "@eidellev/inertia-adonisjs": "^1.0.1",
     "@inertiajs/inertia": "^0.8.2",
     "@inertiajs/inertia-react": "^0.5.1",
+    "@inertiajs/progress": "^0.2.4",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "proxy-addr": "^2.0.6",

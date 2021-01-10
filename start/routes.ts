@@ -26,5 +26,14 @@ Route.get('/healthz', async () => {
 })
 
 Route.get('/', ({ inertia }) => {
-  return inertia.render('home', { name: 'Bruno' })
+  const data = {
+    name: 'Bruno',
+    age: 19,
+  }
+
+  return inertia.render('home', { ...data })
+})
+
+Route.get('/about', ({ inertia }) => {
+  return inertia.render('about')
 })
